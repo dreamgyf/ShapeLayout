@@ -17,11 +17,11 @@ if (file.exists()) {
 }
 
 android {
-    compileSdk 32
+    compileSdk configs.android.compileSdk
 
     defaultConfig {
-        minSdk 21
-        targetSdk 32
+        minSdk configs.android.minSdk
+        targetSdk configs.android.targetSdk
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
@@ -43,5 +43,5 @@ android {
 }
 
 dependencies {
-    implementation 'androidx.appcompat:appcompat:1.5.0'
+    implementation libs.androidx.appcompat
 }
