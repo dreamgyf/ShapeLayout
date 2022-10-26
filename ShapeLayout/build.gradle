@@ -3,16 +3,18 @@ plugins {
     id 'org.jetbrains.kotlin.android'
 }
 
-def file = new File("${rootDir.parent}/maven_publish.gradle")
+def file = new File("${rootDir.parent}/module_publish.gradle")
 if (file.exists()) {
     apply from: file.absolutePath
 
     publishModule {
-        groupId 'com.dreamgyf.android.ui.widget'
-        moduleName 'ShapeLayout'
-        version '1.1'
-        description '一种可以使用属性替代shape背景的布局，从此告别写shape xml，使用这个布局可以使用属性替代shape背景，避免重复创建大量相似但又细微不同的shape xml'
-        url 'https://github.com/dreamgyf/ShapeLayout'
+        library {
+            groupId = 'com.dreamgyf.android.ui.widget'
+            moduleName = 'ShapeLayout'
+            version = '1.1'
+            description = '一种可以使用属性替代shape背景的布局，从此告别写shape xml，使用这个布局可以使用属性替代shape背景，避免重复创建大量相似但又细微不同的shape xml'
+            url = 'https://github.com/dreamgyf/ShapeLayout'
+        }
     }
 }
 
